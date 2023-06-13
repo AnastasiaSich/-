@@ -21,61 +21,135 @@ h2 {
   font-family: "Arial";
 }
 
-table {
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu>ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  display: block;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: #fd8612;
+  background-color: #3f4852;
+}
+
+.menu div {
+  display: none;
+  position: absolute;
+  top: 100%;
+  min-width: 210px;
+}
+
+.dropdown li:not(:last-child) {
+  border-bottom: 1px solid #b9bdc1;
+}
+
+.dropdown a {
+  background-color: #d2d4d5;
+  color: #2a3644;
+}
+
+.menu li:hover div {
+  display: inline-block;
+}
+
+.menu div {
+  border-top: 4px solid transparent;
+  background-color: transparent;
+}
+
+.menu li:last-child .dropdown {
+  right: 0;
+}
+
+ul.dropdown a {
+  color: #2a3644;
+}
+
+.menu>ul>li:not(:first-child) {
+  border-left: solid 1px #3f4852;
+}
+
+.menu>ul>li:not(:last-child),
+.data th:not(:last-child),
+.table b:not(:last-child) {
+  border-right: solid 1px #3f4852;
+}
+
+.data td:not(:last-child),
+.table i:not(:last-child) {
+  border-right: solid 1px #c0c1c2;
+}
+
+.data th,
+.table b {
+  border-bottom: solid 1px #3f4852;
+}
+
+.data tr:not(:last-child) td,
+.table p:not(:last-child) i {
+  border-bottom: solid 1px #c0c1c2;
+}
+
+.data {
   width: 100%;
   table-layout: auto;
   border-collapse: collapse;
-
 }
-
-
 
 .span th:nth-child(2) {
   text-align: left;
 }
 
-
-.span th:last-child {
+.span th:last-child,
+.table b:last-child {
   border-radius: 0 3px 0 0;
   border-right: none;
 }
 
-.span th:first-child {
-  border-radius: 3px 0 0 0;
-  border-left: none;
-}
-
-.year th {
-  padding: 17px 0;
-  color: #ffffff;
-  font: 700 1.6rem "Arial";
-  text-align: center;
-}
-
-.year th:last-child {
-  border-right: none;
-}
-
+.menu ul,
 .data th {
   background-color: #2a3644;
-  border: solid 1px #3f4852;
 }
 
-.span th {
+.menu>ul>li {
+  background-color: transparent;
+}
+
+.menu a,
+thead th {
   padding: 18px 25px;
-  border-top: none;
   color: #ffffff;
   font: 700 1.6rem "Arial";
 }
 
-.data tr td:first-child {
-  border-left: none;
+.data .number,
+.data td:first-child,
+.table p b:first-child,
+.table p i:first-child {
   text-align: center;
   width: 6%;
+  border-radius: 3px 0 0 0;
 }
 
-.data tr td:last-child {
-  border-right: none;
+.name {
+  width: 53%;
 }
 
 .data td:nth-child(3),
@@ -87,12 +161,12 @@ table {
 .data td {
   padding: 18px 25px;
   background-color: #e8e8e8;
-  border: solid 1px #c0c1c2;
   font-size: 16px;
   color: #2a3644;
   font-family: "Arial";
 }
 
+.table p:nth-child(even) i,
 .data tr:nth-child(odd) td {
   background-color: #f2f2f2;
 }
@@ -101,8 +175,52 @@ table {
   background-color: #c0c1c2;
 }
 
+.data tr:last-child td:last-child,
+.table p:last-child i:last-child {
+  border-radius: 0 0 3px 0;
+}
 
+.data tr:last-child td:first-child,
+.table p:last-child i:first-child {
+  border-radius: 0 0 0 3px;
+}
 
-.eight td {
-  border-bottom: none;
+.table {
+  margin: 0 0 20px 0;
+  display: table;
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+
+.table p {
+  display: table-row;
+}
+
+.table b {
+  display: table-cell;
+  padding: 18px 25px;
+  color: #ffffff;
+  font: 700 1.6rem "Arial";
+  background-color: #2a3644;
+}
+
+.table i {
+  display: table-cell;
+  background-color: #e8e8e8;
+  padding: 18px 25px;
+  font-size: 16px;
+  font-style: normal;
+  color: #2a3644;
+  font-family: "Arial";
+}
+
+.table p i:nth-child(3),
+.table p i:nth-child(4),
+.table p i:nth-child(5) {
+  text-align: right;
+}
+
+.table p:hover i {
+  background-color: #c0c1c2;
 }
