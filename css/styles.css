@@ -31,7 +31,11 @@ ul {
   width: 100%;
 }
 
-.menu>ul {
+.menu2 {
+  display: table;
+}
+
+.flex {
   display: flex;
   justify-content: space-between;
 }
@@ -54,29 +58,65 @@ ul {
   background-color: #3f4852;
 }
 
-.menu div {
+.menu .first_dropdown, 
+.menu .second_dropdown,
+.menu .third_dropdown {
   display: none;
   position: absolute;
   z-index: 1;
   top: 100%;
-    min-width: 210px;
-   
-    /* background-color: transparent; */
+  min-width: 210px;
 }
 
-/* .menu div:last-child {
-  right: 0%;
-} */
+.menu .first_dropdown .dropdown {
+  min-width: 210px;
 
+}
+
+.menu .first_dropdown .dropdown:last-child {
+  background-color: #d2d4d5;
+  border-radius: 0 3px 3px 0;
+}
+
+.flex ul:last-child li:last-child {
+  border-bottom: 1px solid #b9bdc1;
+}
 
 .dropdown li:not(:last-child) {
   border-bottom: 1px solid #b9bdc1;
 }
 
+.flex .dropdown:not(:last-child) {
+  border-right: 1px solid #b9bdc1;
+}
+
+.flex .dropdown:first-child li:first-child a {
+  border-radius: 3px 0 0 0;
+}
+
+.flex .dropdown:first-child li:last-child a {
+  border-radius: 0 0 0 3px;
+}
+
+.flex .dropdown:last-child li:first-child a {
+  border-radius: 0 3px 0 0 ;
+}
+
+.flex .dropdown:last-child li:last-child a {
+  border-radius: 0 0  3px 0;
+}
+
+
+
 ul .dropdown a {
   background-color: #d2d4d5;
   color: #2a3644;
   padding: 12px 19px;
+}
+
+ul .dropdown a:hover {
+  background-color: #2a3644;
+  color: #fd8612;
 }
 
 .first_dropdown {
@@ -96,13 +136,13 @@ ul .dropdown a {
 
 .first_dropdown li:hover .second_dropdown {
   display: inline-block;
-  }
+}
 
-  .menu2 .third_dropdown {
-    right: 100%;
-    top: 0;
-    border-right: 4px solid transparent;
-  } 
+.menu2 .third_dropdown {
+  right: 100%;
+  top: 0;
+  border-right: 4px solid transparent;
+}
 
 .second_dropdown li:hover .third_dropdown {
   display: inline-block;
@@ -121,16 +161,16 @@ ul .dropdown a {
 .first_dropdown>ul>li:last-child>a,
 .second_dropdown>ul>li:last-child>a,
 .third_dropdown>ul>li:last-child>a {
-  border-radius: 0 0 3px 3px ;
+  border-radius: 0 0 3px 3px;
 }
 
 .menu>ul>li:not(:first-child) {
   border-left: solid 1px #3f4852;
 }
 
- .menu2>ul>li:not(:first-child) {
+.menu2>ul>li:not(:first-child) {
   border-left: none;
-} 
+}
 
 .menu>ul>li:not(:last-child),
 .menu2>ul>li:not(:last-child),
@@ -139,34 +179,110 @@ ul .dropdown a {
   border-right: solid 1px #3f4852;
 }
 
-.menu2 {
+.menu2,
+.menu3 {
   margin: 38px 0 0;
-display: table;
 }
+
 
 .menu2>ul {
   display: table-row;
 }
+
 
 .menu2>ul>li {
   display: table-cell;
 }
 
 .menu1>ul>li:first-child>a,
-.menu2>ul>li:first-child>a {
+.menu2>ul>li:first-child>a,
+.menu3>ul>li:first-child>a {
   border-radius: 3px 0 0 3px;
 }
 
 .menu1>ul>li:last-child>a,
-.menu2>ul>li:last-child>a {
+.menu2>ul>li:last-child>a,
+.menu3>ul>li:first-child>a {
   border-radius: 0 3px 3px 0;
 }
-
 
 .menu2>ul>li>a {
   text-align: center;
 }
+
+.menu3 .second_dropdown:hover .dropdown {
+  display: block;
+}
+
+.menu3 .home {
+  padding-left: 58px;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  background: url(../images/sprite.png) no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 13px;
+  background-position: -72px -22px;
+  left: 30px;
+  top: 18px;
+}
+
+.home:hover::before {
+  background-position: -55px -22px;
+}
  
+.menu.menu3 li:hover .dropdown_flex {
+  display: flex;
+}
+.menu.menu3 .social li {
+  border: none;
+}
+
+.menu3 .social a {
+  margin: 18px 25px;
+  padding: 0;
+  display: block;
+  background-image: url(../images/sprite.png);
+  background-repeat: no-repeat;
+}
+
+.menu3 .social a:hover {
+  background-color: #2a3644;
+}
+
+.fb {
+  height: 19px;
+  width: 10px;
+  background-position: 0 0;
+}
+
+.fb:hover {
+  background-position: 0 -22px;
+}
+
+.tw {
+  height: 15px;
+  width: 18px;
+  background-position: -12px 0;
+}
+
+.tw:hover {
+  background-position: -12px -22px;
+}
+
+.inst {
+  height: 19px;
+  width: 19px;
+  background-position: -31px 0;
+}
+
+.inst:hover {
+  background-position: -31px -22px;
+}
+
 .data td:not(:last-child),
 .table i:not(:last-child) {
   border-right: solid 1px #c0c1c2;
@@ -203,9 +319,11 @@ display: table;
 }
 
 .menu1>ul,
+.menu3,
 .data th {
   background-color: #2a3644;
 }
+
 
 .menu>ul>li {
   background-color: transparent;
